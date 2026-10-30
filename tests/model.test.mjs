@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {metrics,toggleTask,reviewPlan,escapeHtml,validData} from '../model.js';
+const seed=JSON.parse(await readFile(new URL('../data.json',import.meta.url)));
+test('seed references real demo people and reports consistent totals',()=>{assert.ok(validData(seed));for(const collection of ['plans','tasks','notes'])for(const item of seed[collection])assert.ok(seed.people.some(p=>p.id===item.person));assert.equal(metrics(seed).complete,2);assert.equal(metrics(seed).percent,33);});
+test('completing and reopening a task changes dashboard metrics without losing tasks',()=>{const data=structuredClone(seed);toggleTask(data,'t1');assert.equal(metrics(data).complete,3);assert.equal(metrics(data).percent,50);toggleTask(data,'t1');assert.equal(metrics(data).complete,2);assert.equal(toggleTask(data,'unknown'),false);assert.equal(data.tasks.length,6);});
+test('reviewing a care plan clears the review queue and sets a future date',()=>{const data=structuredClone(seed);assert.equal(metrics(data).reviews,1);assert.equal(reviewPlan(data,'c1'),true);assert.equal(metrics(data).reviews,0);assert.ok(new Date(data.plans[0].review)>new Date());assert.equal(reviewPlan(data,'unknown'),false);});
+test('user content is escaped before HTML rendering',()=>{assert.equal(escapeHtml('<img src=x onerror="alert(1)">'), '&lt;img src=x onerror=&quot;alert(1)&quot;&gt;');assert.equal(escapeHtml("Maggie's & friends"),'Maggie&#39;s &amp; friends');});
+test('JSON export can round-trip all demo changes',()=>{const data=structuredClone(seed);toggleTask(data,'t2');data.notes.push({id:'test',person:'p1',text:'A new care moment',flag:true});const parsed=JSON.parse(JSON.stringify(data));assert.ok(validData(parsed));assert.deepEqual(metrics(parsed),metrics(data));assert.equal(parsed.notes.at(-1).text,'A new care moment');});

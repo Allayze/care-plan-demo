@@ -1,0 +1,32 @@
+{
+ "version":1,
+ "people":[
+ {"id":"p1","name":"Margaret Wilson","age":82,"room":"01","initials":"MW","color":"peach","need":"Mobility support","risk":"Review due","about":"A retired teacher, garden enthusiast and proud grandmother. Please call me Maggie.","preferences":"Tea with milk, a quiet morning and a walk in the garden after lunch.","family":"Emma · Daughter","worker":"Sarah Chen","wellbeing":4},
+ {"id":"p2","name":"Arthur Bennett","age":76,"room":"02","initials":"AB","color":"blue","need":"Independent living","risk":"On track","about":"Former engineer who loves jazz, crosswords and sharing stories.","preferences":"Coffee at breakfast. I like choosing my own clothes and activities.","family":"James · Son","worker":"Oliver James","wellbeing":5},
+ {"id":"p3","name":"Evelyn Clarke","age":89,"room":"03","initials":"EC","color":"purple","need":"Nutrition support","risk":"Attention","about":"An accomplished baker who enjoys music and time with her family.","preferences":"Small meals, familiar music and a seat near the window.","family":"Lucy · Granddaughter","worker":"Amelia Ross","wellbeing":3},
+ {"id":"p4","name":"George Patel","age":80,"room":"04","initials":"GP","color":"mint","need":"Daily living support","risk":"On track","about":"A cricket fan and keen reader who enjoys conversation over tea.","preferences":"Vegetarian meals and time to read the newspaper in the morning.","family":"Anita · Daughter","worker":"Sarah Chen","wellbeing":4},
+ {"id":"p5","name":"Rose Thompson","age":84,"room":"05","initials":"RT","color":"pink","need":"Wellbeing support","risk":"On track","about":"Loves painting, old films and visits from her grandchildren.","preferences":"Art group on Fridays and a relaxed evening routine.","family":"Daniel · Son","worker":"Amelia Ross","wellbeing":5},
+ {"id":"p6","name":"Henry Williams","age":78,"room":"06","initials":"HW","color":"sand","need":"Mobility support","risk":"On track","about":"Enjoys gardening, football and keeping in touch with friends.","preferences":"An early breakfast and a short walk with company.","family":"Sophie · Daughter","worker":"Oliver James","wellbeing":4}
+ ],
+ "plans":[
+ {"id":"c1","person":"p1","title":"Moving with confidence","category":"Mobility","goal":"Enjoy a supported walk in the garden each day.","actions":"Offer a choice of walking times. Follow the agreed mobility assessment and record comfort after each walk.","review":"2026-10-30","status":"Review due","progress":65},
+ {"id":"c2","person":"p3","title":"Making mealtimes enjoyable","category":"Nutrition","goal":"Feel comfortable and supported at mealtimes.","actions":"Offer preferred small meals. Record preferences and escalate changes in appetite to the care lead.","review":"2026-11-02","status":"Active","progress":45},
+ {"id":"c3","person":"p2","title":"My day, my choices","category":"Independence","goal":"Choose and participate in two meaningful activities each week.","actions":"Share the activity calendar and support Arthur to make his own choices.","review":"2026-11-12","status":"Active","progress":85},
+ {"id":"c4","person":"p4","title":"A familiar daily routine","category":"Daily living","goal":"Maintain a comfortable routine with preferred support.","actions":"Ask about preferences before each activity and encourage participation.","review":"2026-11-08","status":"Active","progress":75},
+ {"id":"c5","person":"p5","title":"Time for creativity","category":"Wellbeing","goal":"Join a creative activity twice a week.","actions":"Offer painting and music sessions and record how Rose feels afterwards.","review":"2026-11-14","status":"Active","progress":90},
+ {"id":"c6","person":"p6","title":"Keeping connected","category":"Wellbeing","goal":"Enjoy regular social time and garden visits.","actions":"Offer a daily opportunity for social time and support contact with friends.","review":"2026-11-10","status":"Active","progress":70}
+ ],
+ "tasks":[
+ {"id":"t1","person":"p3","title":"Mealtime check-in","time":"10:00","category":"Nutrition","worker":"Amelia Ross","priority":"High","done":false},
+ {"id":"t2","person":"p1","title":"Review mobility care plan","time":"10:30","category":"Care review","worker":"Sarah Chen","priority":"High","done":false},
+ {"id":"t3","person":"p2","title":"Morning wellbeing check","time":"09:00","category":"Wellbeing","worker":"Oliver James","priority":"Normal","done":true},
+ {"id":"t4","person":"p4","title":"Support morning routine","time":"09:30","category":"Daily living","worker":"Sarah Chen","priority":"Normal","done":true},
+ {"id":"t5","person":"p5","title":"Creative afternoon","time":"14:00","category":"Activities","worker":"Amelia Ross","priority":"Normal","done":false},
+ {"id":"t6","person":"p6","title":"Garden walk","time":"14:30","category":"Mobility","worker":"Oliver James","priority":"Normal","done":false}
+ ],
+ "notes":[
+ {"id":"n1","person":"p3","type":"Observation","text":"Evelyn preferred a smaller breakfast today. Please offer her usual choices at lunch and record how she feels.","author":"Amelia Ross","at":"2026-10-30T09:40:00+10:00","flag":true},
+ {"id":"n2","person":"p2","type":"Wellbeing","text":"Arthur enjoyed the morning crossword group and would like to attend again next week.","author":"Oliver James","at":"2026-10-30T09:15:00+10:00","flag":false},
+ {"id":"n3","person":"p1","type":"Family update","text":"Emma visited this morning. Maggie is looking forward to their garden walk this weekend.","author":"Sarah Chen","at":"2026-10-30T08:50:00+10:00","flag":false}
+ ]
+}
